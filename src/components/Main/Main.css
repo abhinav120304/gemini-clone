@@ -5,8 +5,9 @@
     position: relative;
     background-color: black;
     color: white;
-
 }
+
+/* Navigation Bar */
 .main .nav {
     display: flex;
     align-items: center;
@@ -18,126 +19,235 @@
 .main .nav img {
     width: 40px;
     border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
 }
+.main .nav img:hover {
+    transform: scale(1.1);
+}
+
+/* Main Container */
 .main-container {
     max-width: 900px;
     margin: auto;
-    
+    padding: 0 20px;
 }
-.main .greet{
-    margin: 50px 0px;
+
+/* Greeting */
+.main .greet {
+    margin: 50px 0;
     font-size: 56px;
     color: #c4c7c5;
     font-weight: 500;
-    padding: 20px;
+    text-align: center;
 }
-.main .greet span{
-    background: -webkit-linear-gradient(16deg,#4b90ff,#ff5546);
+.main .greet span {
+    background: linear-gradient(16deg, #4b90ff, #ff5546);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+/* Cards */
 .main .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
     padding: 20px;
-
 }
 .main .card {
-    height: 200px;
-    padding: 15px;
+    height: 220px;
+    padding: 20px;
     background-color: #f0f4f9;
-    border-radius: 10px;
+    border-radius: 12px;
     position: relative;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.main .card:hover {
+    background-color: #dfe4ea;
+    transform: translateY(-5px);
 }
 .main .card img {
-    width: 35px;
-    padding: 5px;
+    width: 40px;
+    padding: 8px;
     position: absolute;
     background-color: white;
-    border-radius: 20px;
-    bottom: 10px;
-    right: 10px;
+    border-radius: 50%;
+    bottom: 15px;
+    right: 15px;
 }
-.main .card p{
+.main .card p {
     color: #585858;
-    font-size: 17px;
+    font-size: 18px;
+    line-height: 1.6;
+}
 
-}
-.main .card:hover{
-    background-color: #dfe4ea;
-}
+/* Bottom Section */
 .main-bottom {
     position: absolute;
     bottom: 0;
     width: 100%;
     max-width: 900px;
-    padding: 0px 20px;
+    padding: 20px;
     margin: auto;
-
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
 }
-.search-box{
+
+/* Search Box */
+.search-box {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 15px;
     background-color: #f0f4f9;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+.search-box:hover {
+    background-color: #e4e8ee;
 }
 .search-box img {
-    width: 24px;
+    width: 28px;
     cursor: pointer;
+    transition: 0.3s;
 }
-.gradient-text {
-    font-weight: 600;
-    font-size: 30px;
-    height: 50px;
-    background: -webkit-linear-gradient(16deg, #b0c5e6, #6c4b48);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  
-.search-box input{
+.search-box img:hover {
+    transform: scale(1.1);
+}
+.search-box input {
     flex: 1;
     background: transparent;
     border: none;
     outline: none;
-    padding: 8px;
+    padding: 10px;
     font-size: 18px;
-
-
-}
-.search-box div{
-    display: flex;
-    align-items: center;
-    gap: 15px;
 }
 
+/* Gradient Text */
+.gradient-text {
+    font-weight: 600;
+    font-size: 32px;
+    height: 50px;
+    background: linear-gradient(16deg, #b0c5e6, #6c4b48);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.3s;
+}
+.gradient-text:hover {
+    transform: scale(1.05);
+}
 
-.main .bottom-info{
-    font-size: 13px;
+/* Bottom Info */
+.main .bottom-info {
+    font-size: 14px;
     margin: 15px auto;
     text-align: center;
     font-weight: 300;
     color: white;
 }
+
+/* Result Data */
 .result-data p {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 300;
     line-height: 1.8;
+    color: #d0d0d0;
 }
-@media (max-width:600px) {
-    .main-bottom input{
-        flex: none;
-        width: 150px;
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main .greet {
+        font-size: 40px;
+    }
+    .main .card {
+        height: 180px;
+        padding: 15px;
     }
     .main-bottom {
-        padding: 5px 10px;
+        padding: 10px;
     }
-    .search-box div {
-        gap: 5px;
+    .search-box input {
+        font-size: 16px;
     }
+    .search-box img {
+        width: 22px;
+    }
+}
+@media (max-width: 480px) {
+    .main .greet {
+        font-size: 32px;
+    }
+    .main .card {
+        height: 150px;
+        padding: 12px;
+    }
+    .search-box {
+        gap: 10px;
+        padding: 10px 15px;
+    }
+    .search-box input {
+        font-size: 14px;
+    }
+    .search-box img {
+        width: 20px;
+    }
+}
+/* TTS Button Styles */
+.tts-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(90deg, #4b90ff, #ff5546);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 15px 0;
+}
+
+.tts-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+/* TTS Buttons Container */
+.tts-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+/* Listen Button */
+.tts-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(90deg, #4b90ff, #ff5546);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tts-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Stop Button */
+.stop-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background: #ff4c4c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stop-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
